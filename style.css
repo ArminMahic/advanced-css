@@ -1,0 +1,58 @@
+*{
+  background-color: #050210;
+}
+.first-div{
+  box-sizing: border-box;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;  
+  border-radius: 100%;
+  box-shadow: 0px -20px 40px rgb(251, 93, 173, 0.5),
+              30px 0 35px -10px rgb(85, 251, 159, 0.4),
+              -30px 0 35px -10px rgb(85, 251, 159, 0.4),
+              0px 20px 40px rgb(185, 122, 255, 0.5);
+  background-image: linear-gradient( #fb5dad, #55fb9f, #b97aff); 
+  filter: contrast(0.8);
+
+  animation: outer-animation 1s linear 0s infinite;  
+}
+
+.second-div{
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  margin: 25px 25px;
+  left: 0;
+  right: 0;  
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+  background-color: #050210;
+}
+
+.second-div::before{
+  position: absolute;
+  content: '';
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  background-color: #10082e;
+  left: 0;
+  right: 0;
+
+  animation: inner-animation 1s linear 0s infinite; 
+}
+
+@keyframes outer-animation {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(360deg)}   
+}
+
+@keyframes inner-animation {
+  from {transform: scale(0,0)}
+  to {transform: scale(1,1)}   
+}
