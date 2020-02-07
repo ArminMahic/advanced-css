@@ -1,0 +1,96 @@
+@img-bg: rgb(0, 110, 255);
+@fig-bg: #f0e9e9;
+@img-width: 130px;
+@mobile: 460px;
+@tablet: 600px;
+@desktop: 950px;
+@desktopxl: 1200px;
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(rgb(215, 223, 235), #9095c0, #6498db,#fff);
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+
+  @media  (max-width: @mobile){
+    .fig-div{
+    grid-template-columns: repeat(1, @img-width);
+    justify-content: center;
+    }
+    h1{  
+      text-align: center;
+    }
+  }    
+
+  @media (min-width: @mobile) and (max-width: @tablet){
+    width: 95%;
+    .fig-div{
+      grid-template-columns: repeat(3, @img-width);
+      }
+  }
+
+  @media (min-width: @tablet) and (max-width: @desktop){
+    width: 75%;
+    .fig-div{
+      grid-template-columns: repeat(3, @img-width);
+      }
+  }
+
+  @media (min-width: @desktop) {
+     .fig-div{
+      grid-template-columns: repeat(5, @img-width);
+      }
+  } 
+
+  @media (min-width: @desktopxl) {
+    width: 75%;
+  }
+
+  
+}
+
+.fig-div{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, @img-width);
+  grid-gap: 15px;
+  justify-content: space-between;
+  margin-bottom: 50px;  
+
+  figure{  
+    margin: 0;    
+    width: @img-width;   
+    border-radius: 10px;
+    background-color: @fig-bg;
+    
+    img{
+      background-color: @img-bg;
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+  
+    figcaption{
+      justify-content: center;  
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      padding-bottom: 5px;
+    }    
+    &:hover{
+      transform: scale(1.1,1.1);
+      cursor: pointer;
+    }
+  } 
+}
+
+
+
+
+
+
+
+

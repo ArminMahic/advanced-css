@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(#d7dfeb, #9095c0, #6498db, #fff);
+  background-repeat: no-repeat;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+@media (max-width: 460px) {
+  .container .fig-div {
+    grid-template-columns: repeat(1, 130px);
+    justify-content: center;
+  }
+  .container h1 {
+    text-align: center;
+  }
+}
+@media (min-width: 460px) and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+  .container .fig-div {
+    grid-template-columns: repeat(3, 130px);
+  }
+}
+@media (min-width: 600px) and (max-width: 950px) {
+  .container {
+    width: 75%;
+  }
+  .container .fig-div {
+    grid-template-columns: repeat(3, 130px);
+  }
+}
+@media (min-width: 950px) {
+  .container .fig-div {
+    grid-template-columns: repeat(5, 130px);
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 75%;
+  }
+}
+.fig-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 130px);
+  grid-gap: 15px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.fig-div figure {
+  margin: 0;
+  width: 130px;
+  border-radius: 10px;
+  background-color: #f0e9e9;
+}
+.fig-div figure img {
+  background-color: #006eff;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+.fig-div figure figcaption {
+  justify-content: center;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+.fig-div figure:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
